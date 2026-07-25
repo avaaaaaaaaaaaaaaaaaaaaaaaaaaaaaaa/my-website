@@ -12,4 +12,4 @@ Its hosted on github pages or in the browser
 
 ## Preview
 
-![Website Preview](https://cdn.hackclub.com/019efb31-f4d9-71c9-8360-cc842545f7f0/screenshot.png)
+![Website Preview](https://cdn.hackclub.com/019f9691-7a6b-75fc-bd21-8ce3c7392523/_b4ab230e-747c-4c16-9915-ddadd972b5f1_.png)
