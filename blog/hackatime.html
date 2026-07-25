@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Blog - How does Hackatime in VS Code work?</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body
+    class="text-center items-center justify-center bg-[url('https://files.catbox.moe/q7fxsw.jpeg')] bg-[size:67px] bg-repeat min-h-screen py-10 px-4">
+    <h1 class="text-pink-600 text-6xl text-bold">Ava</h1>
+
+    <div class="relative group max-w-2xl mx-auto mt-8">
+        <div class="absolute -inset-1 bg-pink-600 blur opacity-70"></div>
+
+        <div class="relative bg-black/80 text-left p-6 rounded">
+            <h2 class="text-pink-400 text-3xl font-bold mb-4 text-center">How does Hackatime in VS Code work?</h2>
+
+            <p class="mb-4">so i got curious how hackatime actually knows how long i've been coding, since there's
+                no timer button or anything. turns out it's not really its own thing. it's hack club running on top
+                of wakatime, which is the tool most editors already use for this. the vscode extension is basically
+                a wakatime plugin, just pointed at hackatime's servers instead of wakatime's.</p>
+
+            <p class="mb-4">there's no stopwatch running in the background. instead the extension pings the api
+                every time you do something, switching files, saving, typing for a bit. those pings are called
+                heartbeats, and each one just carries a timestamp, the file name, the project, and the language.
+                nothing scary, no actual code gets sent.</p>
+
+            <p class="mb-4">on hackatime's end it takes all those heartbeats and glues them together into sessions.
+                if two heartbeats are within 15 minutes of each other they count as the same coding stretch. stop
+                typing longer than that and it just starts a new one. that's really the whole mechanism, a bunch of
+                tiny pings stitched into hours.</p>
+
+            <p class="mb-4">setup is the part that's actually easy. you make an account, grab your api key, and
+                hackatime has a setup page that configures vscode for you, no manually editing config files. install
+                the extension, reload if it asks, and every heartbeat after that just shows up on your dashboard.
+                after that you don't think about it again, you just code and it tracks itself.</p>
+        </div>
+    </div>
+
+    <div class="relative group mt-8">
+        <div class="absolute -inset-1 bg-pink-600 blur opacity-70 "></div>
+
+        <div class="relative">
+            <a href="/" class="text-blue-600"> go back </a>
+        </div>
+    </div>
+
+</body>
+
+</html>
